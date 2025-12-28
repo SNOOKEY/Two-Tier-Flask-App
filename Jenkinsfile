@@ -3,11 +3,11 @@ pipeline {
     agent any
     stages {
         stage('Clone Code') {
-            steps {
-                // Replace with your GitHub repository URL
-                git branch: 'main', url: '[https://github.com/SNOOKEY/Two-Tier-Flask-App.git](https://github.com/SNOOKEY/Two-Tier-Flask-App.git)'
-            }
-        }
+            stage('Clone Code') {
+    steps {
+        git branch: 'main', url: 'https://github.com/SNOOKEY/Two-Tier-Flask-App.git'
+    }
+}
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t flask-app:latest .'
